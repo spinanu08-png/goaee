@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Stock Count App',
-  description: 'Simple stock counting web app with MongoDB'
+  title: 'Calculator',
+  description: 'Calculator app with Google login and MongoDB history'
 };
 
 export default function RootLayout({ children }) {
