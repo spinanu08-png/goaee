@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ร้านข้าวหน้าเป็ดโกอี</title>
+    <meta
+      name="description"
+      content="ร้านข้าวหน้าเป็ดโกอี ข้าวหน้าเป็ด เนื้อเป็ดนุ่ม น้ำราดกลมกล่อม พร้อมเมนูง่ายๆ สำหรับสั่งกลับบ้านและเดลิเวอรี"
+    />
+    <style>
+      :root {
+        --bg: #f8f2e9;
+        --card: #fffaf3;
+        --ink: #1e1a17;
+        --muted: #6e6258;
+        --accent: #a43b24;
+        --accent-2: #245e4c;
+        --line: #eadfce;
+        --shadow: 0 16px 40px rgba(40, 28, 20, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(255, 214, 168, 0.35), transparent 30%),
+          radial-gradient(circle at top right, rgba(176, 223, 203, 0.3), transparent 24%),
+          var(--bg);
+      }
+
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .hero,
+      .panel,
+      .footer {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        min-height: 420px;
+      }
+
+      .hero-copy {
+        padding: 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.4rem, 5vw, 4.4rem);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        margin: 16px 0 0;
+        max-width: 58ch;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .pill {
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        font-size: 0.94rem;
+      }
+
+      .hero-image {
+        position: relative;
+        min-height: 280px;
+        background:
+          linear-gradient(145deg, rgba(164, 59, 36, 0.94), rgba(36, 94, 76, 0.9)),
+          url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80")
+            center/cover;
+      }
+
+      .hero-image::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 120px;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.26));
+      }
+
+      .hero-badge {
+        position: absolute;
+        left: 22px;
+        bottom: 22px;
+        z-index: 1;
+        color: #fff;
+      }
+
+      .hero-badge strong {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+      }
+
+      main {
+        display: grid;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .panel h2,
+      .panel h3 {
+        margin: 0 0 10px;
+        line-height: 1.2;
+      }
+
+      .price {
+        color: var(--accent);
+        font-size: 1.45rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        border: 1px solid transparent;
+      }
+
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .btn.secondary {
+        background: #fff;
+        color: var(--accent-2);
+        border-color: var(--line);
+      }
+
+      .footer {
+        margin-top: 18px;
+        padding: 16px 22px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 920px) {
+        .hero,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="hero">
+        <div class="hero-copy">
+          <div>
+            <h1>ร้านข้าวหน้าเป็ดโกอี</h1>
+            <p class="lead">
+              ข้าวหน้าเป็ดสไตล์บ้านๆ ที่เนื้อเป็ดนุ่ม หนังหอม น้ำราดเข้มข้น
+              เสิร์ฟแบบง่าย อิ่มไว และเหมาะทั้งกินที่ร้าน รับกลับบ้าน หรือสั่งเดลิเวอรี
+            </p>
+            <div class="meta">
+              <span class="pill">เปิดทุกวัน 09:00 - 19:00</span>
+              <span class="pill">รับกลับบ้าน / เดลิเวอรี</span>
+              <span class="pill">ทำใหม่ทุกออเดอร์</span>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="tel:0800000000">โทรสั่งอาหาร</a>
+            <a class="btn secondary" href="https://line.me/" target="_blank" rel="noreferrer">แชต LINE</a>
+          </div>
+        </div>
+        <div class="hero-image" aria-label="ข้าวหน้าเป็ด">
+          <div class="hero-badge">
+            <strong>เมนูแนะนำ</strong>
+            <div>ข้าวหน้าเป็ด + ไข่ต้ม + น้ำซุป</div>
+            <div>หอม อร่อย จบในจานเดียว</div>
+          </div>
+        </div>
+      </section>
+
+      <main>
+        <section class="grid">
+          <article class="panel">
+            <h2>เมนูเด่น</h2>
+            <div class="price">เริ่มต้น 50 บาท</div>
+            <ul>
+              <li>ข้าวหน้าเป็ด</li>
+              <li>ข้าวหน้าเป็ดพิเศษ</li>
+              <li>เพิ่มไข่ / เพิ่มเนื้อ</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>จุดขาย</h3>
+            <ul>
+              <li>เป็ดหมักเข้าเนื้อ หอมเครื่องเทศ</li>
+              <li>น้ำราดกลมกล่อม ไม่หวานเกิน</li>
+              <li>ราคาสบาย กินได้ทุกวัน</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>ติดต่อร้าน</h3>
+            <ul>
+              <li>โทร: 080-000-0000</li>
+              <li>Line: @goaee</li>
+              <li>หน้าร้าน: ใส่ที่อยู่ของร้าน</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="panel cta">
+          <div>
+            <h3>พร้อมขึ้นเป็นหน้าเว็บหลักบน goaee.app</h3>
+            <p style="margin:0;color:var(--muted)">
+              เว็บนี้ตั้งใจทำให้เรียบง่าย ดูสะอาด และพร้อมนำไป publish บน GitHub กับ Vercel
+            </p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn secondary" href="https://vercel.com/" target="_blank" rel="noreferrer">Vercel</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">ร้านข้าวหน้าเป็ดโกอี | เว็บตัวอย่างสำหรับขึ้น GitHub และ deploy บน Vercel</footer>
+    </div>
+  </body>
+</html>
