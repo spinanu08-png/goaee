@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+.print-hide {
+  @apply print:hidden;
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .print-page-break {
+    break-after: page;
+  }
+
+  .print-card {
+    box-shadow: none !important;
+    border-color: #d1d5db !important;
+  }
+}
